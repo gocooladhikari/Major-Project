@@ -17,7 +17,8 @@ const app = express()
 
 
 // //DB Config
-mongoose.connect('mongodb://localhost:27017/Sentiment-Analysis', {useNewUrlParser: true, useUnifiedTopology: true}).then(
+// mongodb://localhost:27017/Sentiment-Analysis
+mongoose.connect('mongodb+srv://gocool:gocool@cluster0.3ujkq.mongodb.net/Major-Proj?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true}).then(
   () => console.log('DB connected')
 ).catch(err => console.log(err))
 
