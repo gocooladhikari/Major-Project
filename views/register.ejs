@@ -1,0 +1,84 @@
+
+  <body>
+    
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div> 
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/all">All Products</a></li>
+                        <!-- <li><a href="single-product.html">All Products</a></li> -->
+                        <li><a href="/user/login">Login</a></li>
+                        <li class="active"><a href="/user/register">Register</a></li>
+                        <!-- <li><a href="#">Category</a></li>
+                        <li><a href="#">Others</a></li>
+                        <li><a href="#">Contact</a></li> -->
+                        <!-- <li class="form-inline my-2 my-lg-0">Login</li> -->
+                    </ul>
+                    <!-- <ul class="navbar-text ">
+                        <li>Login</li>
+                        <li>Register</li>
+                    </ul> -->
+                </div>  
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+ 
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Register</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container justify-content-center mt-2">
+        <form id="login-form-wrap" action="/user/register" method="post">
+            <p>Register Here.</p>
+
+            <p class="form-row form-row-first">
+                <label for="username">Chose a Username</label>
+                <input type="text" id="username" name="username" class="input-text" required>
+            </p>
+            <p class="form-row form-row-first">
+                <label for="username">Password </label>
+                <input type="password" id="password1" name="password1" class="input-text">
+            </p>
+            <p class="form-row form-row-last">
+                <label for="password">Repeat Password </label>
+                <input type="password" id="password2" name="password2" class="input-text">
+            </p>
+            <div class="clear"></div>
+
+
+            <p class="form-row">
+                <input type="submit" value="Register" name="login" class="button">
+                <!-- <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme" name="rememberme"> Remember me </label> -->
+            </p>
+            <!-- <p class="lost_password">
+                <a href="#">Lost your password?</a>
+            </p> -->
+
+            <div class="clear"></div>
+        </form>
+    </div>
+    
+   

@@ -1,0 +1,150 @@
+
+  <body>    
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div> 
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/all">All Products</a></li>
+                        <!-- <li class="active"><a href="single-product.html">Single product</a></li> -->
+                        <!-- <li><a href="cart.html">Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li> -->
+                    </ul>
+                </div>  
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+    
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Detailed View</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container align-items-center justify-content-center">
+            <div class="row">
+                
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                                                
+                        <div class="row ">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <img class="single-img" src="/<%= post.image %>" alt="">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 w-75">
+                                <div class="product-inner">
+                                    <h2 class="product-name"><%= post.name %></h2>
+                                    <div class="product-inner-price">
+                                        <ins>Rs. <%= post.price %></ins> 
+                                    </div>    
+                                     
+                                    
+                                    <div class="product-inner-category">
+                                        <p>Category: <a href=""><%= post.category %></a> </p>
+                                    </div> 
+                                    
+                                    <div class="panel" role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Your Review</a></li>
+                                            <li role="presentation"><a href="#your" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <%- post.description %>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                                <!-- <h2>Reviews</h2> -->
+                                                <div class="submit-review">
+                                                    <form action="/product/<%= post.id %>/comment" method="POST">
+                                                        <input type="text" name="user" placeholder="Your Name" required>
+                                                        <textarea name="review" placeholder="Your review" id="" cols="30" rows="10" required></textarea></>
+                                                        <p><input type="submit" value="Submit"></p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="your">
+                            <!-- comment loop -->
+                                            <% for(var i = 0; i < post.comments.length; i++){ %>
+                                                <div class="card card-white post">
+                                                    <div class="post-heading">
+                                                        <div class="float-left meta">
+                                                            <div class="title h5">
+                                                                <a href="#"><b><%= post.comments[i].user %></b></a>
+                                                                made a post.
+                                                            </div>
+                                                            <h6 class="pl-sm-3">&#9733&#9733&#9734&#9734&#9734</h6>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="post-description"> 
+                                                        <p><%= post.comments[i].comment %></p>
+                                    
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            <% } %>
+                            <!-- /comment loop -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Related Products</h2>
+                            <div class="related-products-carousel">
+
+                                <% for(var i = 0; i < posts.length; i++){ %>
+                                    <div class="single-product">
+                                        <div class="product-f-image">
+                                            <img src="/<%= posts[i].image %>" alt="">
+                                            <div class="product-hover">
+                                                <!-- <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a> -->
+                                                <a href="/product/<%= posts[i].id %>/details" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                            </div>
+                                        </div>
+
+                                        <h2><%= posts[i].name %></h2>
+
+                                        <div class="product-carousel-price">
+                                            <ins>Rs.<%= posts[i].price %></ins>
+                                        </div> 
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
